@@ -1,0 +1,60 @@
+﻿<Window x:Class="Kafe_Bulochka.CookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kafe_Bulochka"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="CookWindow" Height="900" Width="1600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0">
+            <TabItem  Height="50" Width="auto" Header="Смена">
+                <Grid>
+                    <DataGrid  CanUserAddRows="False" IsReadOnly="True" Name="OrdersDGrid" AutoGenerateColumns="False" ColumnWidth="*" Style="{StaticResource MaterialDesignDataGrid}" Margin="101,10,100,10">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding DateTimes, StringFormat='dd.MM.yyyy hh:mm:ss '}"/>
+                            <DataGridTextColumn Header="Столик" Binding="{Binding Tables}"/>
+                        </DataGrid.Columns>
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="открыть" Click="Open_Click" />
+                                <MenuItem Header="обновить" Click="update_ClickHis" />
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Height="50" Width="auto" Header="История">
+                <Grid>
+                    <DataGrid  CanUserAddRows="False" IsReadOnly="True" Name="OrdersDGridHist" AutoGenerateColumns="False" ColumnWidth="*" Style="{StaticResource MaterialDesignDataGrid}" Margin="101,10,100,10">
+                        <DataGrid.Columns>
+                                <DataGridTextColumn Header="Дата" Binding="{Binding DateTimes, StringFormat='dd.MM.yyyy hh:mm:ss '}"/>
+                                <DataGridTextColumn Header="Столик" Binding="{Binding Tables}"/>
+                        </DataGrid.Columns>
+                            <DataGrid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="открыть" Click="Open_ClickHis" />
+                                    <MenuItem Header="обновить" Click="update_ClickHis" />
+                            </ContextMenu>
+                            </DataGrid.ContextMenu>
+                    </DataGrid>
+                </Grid>
+             </TabItem>
+        </TabControl>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Height="50" Width="300" IsCancel="True" Content="Назад" Name="BackBtn" Click="BackBtn_Click"/>
+            <Button Grid.Column="1" Height="50" Width="300"/>
+        </Grid>
+        
+    </Grid>
+
+</Window>

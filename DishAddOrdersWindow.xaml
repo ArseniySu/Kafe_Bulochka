@@ -1,0 +1,137 @@
+﻿<Window x:Class="Kafe_Bulochka.DishAddOrdersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kafe_Bulochka"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="DishAddOrdersWindow" Height="900" Width="1600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="395*"/>
+            <RowDefinition Height="47*"/>
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0">
+            <TabItem  Height="50" Width="auto" Header="соки">
+                <Grid>
+                    <DataGrid  CanUserAddRows="False" IsReadOnly="True" Name="DishjuiceDGrid" AutoGenerateColumns="False" ColumnWidth="*" Style="{StaticResource MaterialDesignDataGrid}" Margin="101,10,100,10"
+                               MouseDoubleClick="DishjuiceDGrid_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Наименование" Binding="{Binding Tittle}"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Prise}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <TabItem  Height="50" Width="auto" Header="гарниры ">
+                <Grid>
+                    <DataGrid  CanUserAddRows="False" IsReadOnly="True" Name="DishgarnishDGrid" AutoGenerateColumns="False" 
+                               ColumnWidth="*" Style="{StaticResource MaterialDesignDataGrid}" Margin="101,10,100,10"
+                               MouseDoubleClick="DishgarnishDGrid_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Наименование" Binding="{Binding Tittle}"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Prise}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <TabItem  Height="50" Width="auto" Header="алкогольные напитки">
+                <Grid>
+                    <DataGrid  CanUserAddRows="False" IsReadOnly="True" Name="DishAlkDGrid" AutoGenerateColumns="False" ColumnWidth="*" Style="{StaticResource MaterialDesignDataGrid}" Margin="101,10,100,10"
+                               MouseDoubleClick="DishAlkDGrid_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Наименование" Binding="{Binding Tittle}"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Prise}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <TabItem  Height="50" Width="auto" Header="горячие напитки">
+                <Grid>
+                    <DataGrid  CanUserAddRows="False" IsReadOnly="True" Name="DishhotdrinksDGrid" AutoGenerateColumns="False" ColumnWidth="*" 
+                               Style="{StaticResource MaterialDesignDataGrid}" Margin="101,10,100,10"
+                               MouseDoubleClick="DishhotdrinksDGrid_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Наименование" Binding="{Binding Tittle}"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Prise}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <TabItem  Height="50" Width="auto" Header="десерты">
+                <Grid>
+                    <DataGrid  CanUserAddRows="False" IsReadOnly="True" Name="DishdessertsDGrid" AutoGenerateColumns="False" ColumnWidth="*" 
+                               Style="{StaticResource MaterialDesignDataGrid}" Margin="101,10,100,10"
+                               MouseDoubleClick="DishdessertsDGrid_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Наименование" Binding="{Binding Tittle}"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Prise}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <TabItem  Height="50" Width="auto" Header="горячие блюда">
+                <Grid>
+                    <DataGrid  CanUserAddRows="False" IsReadOnly="True" Name="DishhotdishesDGrid" AutoGenerateColumns="False" ColumnWidth="*" 
+                               Style="{StaticResource MaterialDesignDataGrid}" Margin="101,10,100,10"
+                               MouseDoubleClick="DishhotdishesDGrid_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Наименование" Binding="{Binding Tittle}"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Prise}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <TabItem  Height="50" Width="auto" Header="салаты">
+                <Grid>
+                    <DataGrid  CanUserAddRows="False" IsReadOnly="True" Name="DishSallatsDGrid" AutoGenerateColumns="False" ColumnWidth="*" 
+                               Style="{StaticResource MaterialDesignDataGrid}" Margin="101,10,100,10"
+                               MouseDoubleClick="DishSallatsDGrid_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Наименование" Binding="{Binding Tittle}"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Prise}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <TabItem  Height="50" Width="auto" Header="закуски">
+                <Grid>
+                    <DataGrid  CanUserAddRows="False" IsReadOnly="True" Name="DishsnacksDGrid" AutoGenerateColumns="False" ColumnWidth="*" 
+                               Style="{StaticResource MaterialDesignDataGrid}" Margin="101,10,100,10"
+                               MouseDoubleClick="DishsnacksDGrid_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Наименование" Binding="{Binding Tittle}"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Prise}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            
+            <TabItem  Height="50" Width="auto" Header="супы">
+                <Grid>
+                    <DataGrid  CanUserAddRows="False" IsReadOnly="True" Name="DishsoupsDGrid" AutoGenerateColumns="False" ColumnWidth="*"
+                               Style="{StaticResource MaterialDesignDataGrid}" Margin="101,10,100,10"
+                               MouseDoubleClick="DishsoupsDGrid_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Наименование" Binding="{Binding Tittle}"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Prise}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            
+        </TabControl>
+
+
+        <Button Grid.Row="1" Margin="500,0,500,0" Name="OkBtn" Content="OK" Click="OkBtn_Click" />
+    </Grid>
+</Window>

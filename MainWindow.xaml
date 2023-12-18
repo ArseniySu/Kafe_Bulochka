@@ -1,0 +1,34 @@
+﻿<Window x:Class="Kafe_Bulochka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kafe_Bulochka"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="900" Width="1600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.ColumnSpan="2" Stretch="UniformToFill" Source="D:\\ТТИТ\\ЛАБОРАТОРНЫЕ\\ИТПСИС\\лаба 8\\123.jpg"/>
+        <TextBlock Margin="51,42,0,644" Style="{StaticResource TitleText}" Name="textblock1" HorizontalAlignment="Left" Width="783" Grid.ColumnSpan="2"  >Кафе "Булочка"</TextBlock>
+        <Border MinWidth="200" Margin="0,0,10,0" Background="White" VerticalAlignment="Center" Padding="30"
+            MaxWidth="350" CornerRadius="20" Grid.Column="1">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="10"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock  Text="Авторизация" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <Grid Margin="0 0 0 20">
+                </Grid>
+                <TextBox Name="LoginTBox" materialDesign:HintAssist.Hint="Введите логин" Style ="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <PasswordBox Name="PasswordTBox" materialDesign:HintAssist.Hint="Введите пaроль" Margin="0 20" Style ="{StaticResource MaterialDesignFloatingHintPasswordBox}" Cursor="Arrow"/>
+                <Grid>
+                    <Button Content="Вход" HorizontalAlignment="Left" Margin="150,30,0,30" Name="LoginBtn" Click="LoginBtn_Click" Height="30" Style="{StaticResource MaterialDesignPaperButton}" Width="120"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

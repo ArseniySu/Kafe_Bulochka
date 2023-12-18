@@ -1,0 +1,75 @@
+﻿<Window x:Class="Kafe_Bulochka.AddOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kafe_Bulochka"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="AddOrderWindow" Height="800" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250*"/>
+            <RowDefinition Height="420*"/>
+            <RowDefinition Height="118*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="56*"/>
+                <RowDefinition Height="27*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,0,8">
+                <TextBlock Text="Дата и время:"  HorizontalAlignment="Right" Margin="5" Style="{StaticResource MaterialDesignButtonTextBlock}"/>
+                <TextBlock Text="Официант:" HorizontalAlignment="Right" Margin="5" Style="{StaticResource MaterialDesignButtonTextBlock}"/>
+                <TextBlock Text="Столик:"  HorizontalAlignment="Right" Margin="0,10,5,0" Style="{StaticResource MaterialDesignButtonTextBlock}"/>
+                <TextBlock Text="Количество персон:"  HorizontalAlignment="Right" Margin="0,15,5,0" Style="{StaticResource MaterialDesignButtonTextBlock}" Height="20" RenderTransformOrigin="0.487,1.034"/>
+            </StackPanel>
+
+            <Button Grid.ColumnSpan="2" Content="Добавить блюдо"  Grid.Row="1" Margin="200,0,200,0" 
+                Name="AddDishBtn" Click="AddDishBtn_Click"  Style="{StaticResource MaterialDesignFlatAccentBgButton}"/>
+
+            <StackPanel Grid.Column="1" Margin="0,0,0,8">
+                <TextBlock Margin="5" Name="DanetimeTbox" Style="{StaticResource MaterialDesignButtonTextBlock}"/>
+                <TextBlock Margin="5" Name="WaiterTbox" Style="{StaticResource MaterialDesignButtonTextBlock}"/>
+                <ComboBox Name="NumberTablesCBox" Margin="5" Width="50" HorizontalAlignment="Left"
+                         SelectedValuePath="title"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="-" Name="qqq" Click="qqq_Click"/>
+                    <TextBlock Margin="5" Name="qwe" Text="1" Width="40" Style="{StaticResource MaterialDesignButtonTextBlock}"
+                               TextAlignment ="Center"/>
+                    <Button Content="+" Name="www" Click="www_Click"/>
+                </StackPanel>
+                
+                
+            </StackPanel>
+
+        </Grid>
+        <DataGrid Grid.Row="1" Margin="5,0,5,0" CanUserAddRows="False" IsReadOnly="True" 
+                  Name="DishDgrid" AutoGenerateColumns="False" 
+                  ColumnWidth="*" Style="{StaticResource MaterialDesignDataGrid}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Блюдо" Binding="{Binding Dishes.Tittle}"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="обновить" Click="update_ClickHis" />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button IsCancel="True" Content="Назад" Name="BackBtn" Margin="70,0,170,0" Width="220" Click="BackBtn_Click"/>
+            <Button Content="Сохранить" Name="SaveBtn" Click="SaveBtn_Click" Margin="50,0,50,0" Width="220" />
+        </StackPanel>
+
+
+    </Grid>
+</Window>

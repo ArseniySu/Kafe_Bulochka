@@ -1,0 +1,18 @@
+﻿<Window x:Class="Kafe_Bulochka.AddChangesWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kafe_Bulochka"
+        mc:Ignorable="d"
+                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
+        Title="AddChangesWindow1" Height="350" Width="500" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Margin="50">
+            <ComboBox SelectedValuePath="title" Name="ChangesCBox" materialDesign:HintAssist.Hint="Смена" Margin="20"/>
+            <DatePicker Name="datechan" materialDesign:HintAssist.Hint="Дата" Margin="20"/>
+            <Button Name="AddChangesBtn" Click="AddChangesBtn_Click" Content="Сохранить" Margin="20"/>
+        </StackPanel>
+    </Grid>
+</Window>
